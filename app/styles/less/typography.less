@@ -1,0 +1,115 @@
+// Variables
+@fontFamily: 'Open Sans', Helvetica, sans-serif;
+@fontColor: #333;
+@fontSize: 16px;
+@fontSize-small: 0.8rem;
+@fontSize-medium: 1.2rem;
+@fontSize-large: 1.6rem;
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: @fontFamily;
+	color: @fontColor;
+}
+
+html,
+body {
+	color: @fontColor;
+	font-size: @fontSize;
+	line-height: 1.4;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+h6 {
+	font-size: .8rem;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:visited {
+
+	}
+
+	&:hover {
+
+	}
+}
+
+.font {
+	&-size {
+		&--small {
+			font-size: @fontSize-small;
+		}
+
+		&--large {
+			font-size: @fontSize-large;
+		}
+	}
+
+	&-color {
+		&--error {
+			color: @red;
+		}
+	}
+
+	&-align {
+		&--center {
+			text-align: center;
+		}
+
+		&--left {
+			text-align: left;
+		}
+
+		&--right {
+			text-align: right;
+		}
+	}
+
+	&-weight {
+		&--light {
+			font-weight: 300;
+		}
+
+		&--normal {
+			font-weight: 400;
+		}
+
+		&--medium {
+			font-weight: 600;
+		}
+
+		&--bold {
+			font-weight: 700;
+		}
+	}
+}

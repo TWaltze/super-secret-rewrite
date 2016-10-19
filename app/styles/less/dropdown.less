@@ -1,0 +1,49 @@
+.dropdown {
+	position: relative;
+	display: inline-block;
+
+	input[type=checkbox] {
+		display: none;
+	}
+
+	&__button {
+		&:extend(.button all);
+
+		width: 100%;
+		text-align: left;
+
+		.button__icon {
+			float: right;
+		}
+	}
+
+	&__items {
+		display: none;
+		position: absolute;
+		min-width: 100%;
+		margin-top: 5px;
+		border: 1px solid @grey;
+		white-space: nowrap;
+		z-index: 2000;
+		background: #fff;
+
+		:checked + &,
+		&.active {
+			display: block;
+		}
+	}
+
+	&__item {
+		padding: .5em;
+		border-bottom: 1px solid @grey;
+		cursor: pointer;
+
+		&:hover {
+			background: @grey-lightest;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}

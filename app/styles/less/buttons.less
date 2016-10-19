@@ -1,0 +1,141 @@
+.button {
+	cursor: pointer;
+
+	color: #fff;
+	line-height: 1;
+	font-size: 1em;
+	font-family: @fontFamily;
+	font-weight: 300;
+	text-align: center;
+	text-decoration: none;
+
+	outline: none;
+	border: none;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+
+	display: inline-block;
+	padding: 0.5em 0.7em;
+	margin: 0;
+
+	/* mobile safari fix */
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+
+	.newColoredButton(@accent);
+
+	&__icon {
+		&:first-child {
+			margin-right: .4em;
+		}
+
+		&:last-child {
+			margin-left: .4em;
+		}
+	}
+
+	&-group {
+		& > [class^="button"] {
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	&-size {
+		&--small {
+			font-size: @fontSize-small;
+		}
+
+		&--medium {
+			font-size: @fontSize-medium;
+		}
+
+		&--large {
+			font-size: @fontSize-large;
+		}
+
+		&--fullWidth {
+			width: 100%;
+		}
+	}
+
+	&--twitter {
+		@baseColor: #00ACED;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--facebook {
+		letter-spacing: -.1em;
+
+		@baseColor: #3B5999;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--dark {
+		@baseColor: darken(@accent, 5%);
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--blue {
+		@baseColor: @blue;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--green {
+		@baseColor: @green;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--red {
+		@baseColor: @red;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--orange {
+		@baseColor: @orange;
+
+		.newColoredButton(@baseColor);
+	}
+
+	&--yellow {
+		@baseColor: @yellow;
+
+		.newColoredButton(@baseColor);
+	}
+}
+
+.newColoredButton(@baseColor) {
+	&:extend(.button);
+
+	background: @baseColor;
+	border-top-color: @baseColor;
+	border-bottom-color: darken(@baseColor, 15%);
+
+	&:hover {
+		border-top-color: darken(@baseColor, 5%);
+		background: darken(@baseColor, 5%);
+	}
+
+	&:active {
+		border-top-color: darken(@baseColor, 10%);
+		background: darken(@baseColor, 10%);
+	}
+
+	&:disabled,
+	&.disabled {
+		border-top-color: lighten(@baseColor, 20%);
+		background: lighten(@baseColor, 20%);
+		cursor: default;
+	}
+}

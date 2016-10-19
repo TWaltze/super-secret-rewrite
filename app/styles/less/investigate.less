@@ -1,0 +1,46 @@
+.investigate {
+	.grid--fill;
+	.grid--stretch;
+
+	&__sidebar {
+		.grid__col-1;
+
+		margin-right: 20px;
+		border-right: 1px solid @grey;
+		min-width: 200px;
+		max-width: 300px;
+		font-size: @fontSize-small;
+		position: relative;
+		background: @grey-lightest;
+
+		&__tagPicker {
+			padding: 20px;
+			overflow-y: auto;
+			height: 100%;
+			z-index: 2000;
+			background: @grey-lightest;
+			position: relative;
+		}
+
+		&__valueSelection {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: @blue-lightest;
+			margin: 5px 0;
+			z-index: 1000;
+
+			transform: translateX(0);
+			transition: all .3s;
+
+			&.active {
+				transform: translateX(100%);
+			}
+		}
+	}
+
+	&__main {
+		.grid__col-4;
+	}
+}

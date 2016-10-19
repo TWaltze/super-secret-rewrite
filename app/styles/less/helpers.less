@@ -1,0 +1,50 @@
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pad {
+	padding: 20px;
+}
+
+.bg {
+	&--red {
+		color: @red-darkest;
+		background-color: @red-lightest;
+	}
+
+	&--green {
+		color: @green-darkest;
+		background-color: @green-lightest;
+	}
+
+	&--yellow {
+		color: @yellow-darkest;
+		background-color: @yellow-lightest;
+	}
+
+	&--fill {
+		&:extend(bg all);
+
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}

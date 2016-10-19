@@ -1,0 +1,65 @@
+@gutter: 10px;
+@columns: 10;
+
+.grid {
+	position: relative;
+	display: flex;
+	flex-flow: row;
+	align-items: flex-start;
+}
+
+.grid--stretch {
+	&:extend(.grid);
+
+	align-items: stretch;
+}
+
+.grid--center {
+	&:extend(.grid);
+
+	align-items: center;
+}
+
+.grid--fill {
+	&:extend(.grid);
+
+	height: 100%;
+}
+
+.grid--vertical {
+	&:extend(.grid);
+
+	flex-flow: column;
+}
+
+.grid--gutter {
+	&:extend(.grid);
+
+	& > * {
+		margin-right: @gutter;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.grid__row {
+	flex: 0 0 auto;
+	position: relative;
+
+	&--fill {
+		flex: 1 1 auto;
+		position: relative;
+	}
+}
+
+.generate-columns(@columns);
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+	.grid__col-@{i} {
+		flex: @i;
+	}
+
+	.generate-columns(@n, (@i + 1));
+}
