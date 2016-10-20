@@ -1,0 +1,8 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^build/index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /build/index.html [L]
