@@ -39,12 +39,14 @@
  * Used to contain floats: h5bp.com/q
  */
 
-.clearfix:before,
-.clearfix:after {
-	content: "";
-	display: table;
-}
+.clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
 
-.clearfix:after {
-	clear: both;
+	&:after {
+		clear: both;
+	}
 }

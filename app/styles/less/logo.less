@@ -1,0 +1,61 @@
+.logo {
+	@dimension: 15px;
+	@margin: 5px;
+	@padding: 20px;
+	@totalWidth: @dimension * 3 + @margin * 2;
+	@totalHeight: @dimension * 3 + @margin * 2;
+	@topOffset: 0;
+
+	.clearfix;
+
+	display: inline-block;
+
+	&--center {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -@totalWidth / 2;
+		margin-top: -@totalHeight / 2;
+
+		&.logo--background {
+			margin-left: -(@totalWidth + @padding) / 2;
+			margin-top: -(@totalHeight + @padding) / 2;
+		}
+	}
+
+	&--background {
+		background: #fff;
+		padding: 20px;
+	}
+
+	.logo__square {
+		background: @blue;
+		width: @dimension;
+		height: @dimension;
+		float: right;
+		top: @topOffset;
+		margin-left: @margin;
+		margin-top: @margin;
+		position: relative;
+
+		&--accent {
+			background: @orange;
+		}
+
+		&--no-margin-left {
+			margin-left: 0;
+		}
+
+		&--no-margin-right {
+			margin-right: 0;
+		}
+
+		&--no-margin-top {
+			margin-top: 0;
+		}
+
+		&--clear {
+			clear: both;
+		}
+	}
+}

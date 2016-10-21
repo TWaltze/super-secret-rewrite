@@ -1,0 +1,28 @@
+.navigation {
+	.list--horizontal;
+	.list--selectable;
+	.grid;
+	.grid--center;
+
+	background: @grey-darkest;
+
+	&__logo {
+		.logo;
+
+		padding: 10px;
+	}
+
+	&__item {
+		.list__item;
+
+		padding: 10px;
+		color: @grey-light;
+		display: flex;
+		align-self: stretch;
+		align-items: center;
+
+		&:hover {
+			background: @grey-dark;
+		}
+	}
+}

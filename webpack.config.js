@@ -12,7 +12,6 @@ module.exports = {
 	entry: PATHS.app,
 	output: {
 		path: PATHS.build,
-		publicPath: '/build/',
 		filename: 'bundle.js'
 	},
 	devtool: 'source-map',
